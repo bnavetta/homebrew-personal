@@ -9,7 +9,7 @@ class ItunesIndexer < Formula
     depends_on :xcode
 
     def install
-        "itunes-indexer".cd do
+        (buildpath/"itunes-indexer").cd do
             xcodebuild "-workspace", "itunes-indexer.xcworkspace",
                        "-scheme", "itunes-indexer",
                        "DSTROOT=#{prefix}",
